@@ -1,0 +1,246 @@
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "~perfect-scrollbar/css/perfect-scrollbar.css";
+
+/* styles.css */
+html {
+  overflow-x: hidden; /* Hide default scrollbar */
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+.mCustomScrollbar {
+  height: 100%;
+  overflow: auto; /* Ensure custom scrollbar applies */
+}
+.mCSB_scrollTools {
+  z-index: 9;
+}
+
+/* Absolute Center Spinner */
+.loading {
+  position: fixed;
+  z-index: 999;
+  height: 20px;
+  width: 20px;
+  overflow: show;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/* Transparent Overlay */
+.loading:before {
+  content: "";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* :not(:required) hides these rules from IE9 and below */
+.loading:not(:required) {
+  /* hide "loading..." text */
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+// .cursor-loader {
+//   cursor: wait;
+
+//   * {
+//     cursor: wait !important;
+//     //z-index: 1000px !important;
+//   }
+// }
+
+// .cdk-overlay-pane {
+//   width: 400px;
+// }
+
+.mat-mdc-dialog-container .mdc-dialog__title {
+  font-family: "JUST Sans" !important;
+  font-weight: 600 !important;
+  margin: 0;
+  font-size: 18px !important;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 15px;
+
+  &::before {
+    display: none;
+  }
+}
+
+.mat-mdc-dialog-container .mdc-dialog__content {
+  padding: 15px 20px !important;
+  color: #333 !important;
+}
+
+.mat-mdc-dialog-actions {
+  justify-content: flex-end !important;
+  padding: 10px 20px 20px 20px !important;
+}
+
+button.light-outlined-button.mdc-button {
+  background-color: transparent;
+  color: var(--muted);
+  border: 1px solid;
+  border-color: var(--border-color);
+  padding: 10px 35px;
+  border-radius: 4px;
+  height: 38px;
+  font-family: "JUST Sans";
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button.primary-filled-button.mdc-button {
+  padding: 10px 35px;
+  border-radius: 4px;
+  height: 38px;
+  font-family: "JUST Sans";
+  cursor: pointer;
+  font-size: 14px;
+  background-color: var(--primary);
+  color: var(--white);
+  border: 1px solid;
+  border-color: var(--primary);
+  box-shadow: none;
+}
+
+.mat-mdc-slide-toggle.mat-accent {
+  --mdc-switch-selected-focus-state-layer-color: #2d64d6 !important;
+  --mdc-switch-selected-handle-color: #2d64d6 !important;
+  --mdc-switch-selected-hover-state-layer-color: #2d64d6 !important;
+  --mdc-switch-selected-pressed-state-layer-color: #2d64d6 !important;
+  --mdc-switch-selected-focus-handle-color: #2d64d6 !important;
+  --mdc-switch-selected-hover-handle-color: #2d64d6 !important;
+  --mdc-switch-selected-pressed-handle-color: #2d64d6 !important;
+  --mdc-switch-selected-focus-track-color: #2d64d6 !important;
+  --mdc-switch-selected-hover-track-color: #2d64d6 !important;
+  --mdc-switch-selected-pressed-track-color: #2d64d6 !important;
+  --mdc-switch-selected-track-color: #6992e7 !important;
+}
+
+.mat-datepicker-content {
+  border-radius: 16px !important;
+}
+
+.mat-calendar-table {
+  border: 0 !important;
+}
+
+.mat-calendar-table-header th {
+  text-align: center !important;
+  padding: 0 0 8px 0 !important;
+  background: transparent;
+  border: 0 !important;
+}
+
+.mat-calendar-body-label {
+  text-align: left !important;
+  padding-left: 4.7142857143% !important;
+  padding-right: 4.7142857143% !important;
+}
+
+.mat-calendar-body tr,
+.mat-calendar-table tr {
+  border-bottom: 0 !important;
+}
+
+.mat-calendar {
+  font-family: "JUST Sans" !important;
+}
+
+.modal-header {
+  padding: 1rem 1rem;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.modal-header .btn-close {
+  margin-left: auto;
+}
+
+.mdc-button,
+.mdc-form-field {
+  font-family: "JUST Sans" !important;
+}
+
+.mat-mdc-radio-button
+  .mdc-radio
+  .mdc-radio__native-control:enabled
+  + .mdc-radio__background
+  .mdc-radio__inner-circle {
+  border-color: var(--primary) !important;
+}
+
+.mat-mdc-radio-button
+  .mdc-radio
+  .mdc-radio__native-control:enabled:checked
+  + .mdc-radio__background
+  .mdc-radio__outer-circle {
+  border-color: var(--primary) !important;
+}
+
+.mat-calendar-body-selected {
+  background-color: var(--primary) !important;
+}
+
+button:disabled {
+  opacity: 0.3;
+}
+
+app-add-team-member {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+div.custom-star button {
+  margin: 0px -18px 0px 0px;
+}
+.disable:hover {
+  cursor: not-allowed;
+}
+.disable:active {
+  pointer-events: none;
+}
+
+perfect-scrollbar .ps-content {
+  height: 100%;
+}
+
+.bookings-details-dialog-container {
+  .mdc-dialog__container .mdc-dialog__surface {
+    overflow: hidden !important;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.perfect-scrollbar-outer {
+  display: flex;
+  overflow-y: auto;
+  min-height: 480px;
+  max-width: 80vw;
+  max-height: 90vh;
+}
+
+app-team-booking-details,
+app-edit-view-booking {
+  height: 100%;
+  flex-grow: 1;
+  display: flex;
+}

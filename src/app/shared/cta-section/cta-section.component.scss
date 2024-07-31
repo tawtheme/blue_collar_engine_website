@@ -1,0 +1,86 @@
+.section-hvac-insights {
+  background-image: url("../../../assets/images/frontend/images/hvac-insights-bg.png");
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: right;
+  height: 350px;
+  display: flex;
+  align-items: center;
+
+  h2 {
+    color: #fff;
+    font-size: 35px;
+    font-weight: 700;
+  }
+
+  p {
+    color: #fff;
+    font-size: 20px;
+    margin: 0;
+    font-weight: 300;
+  }
+
+  .btn-light {
+    padding-left: 35px;
+    padding-right: 35px;
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    color: #2d64d6;
+    font-size: 18px;
+  }
+}
+
+.bg-blue-primary {
+  background-color: #2d64d6;
+}
+.rotate90Right {
+  transform: rotate(90deg);
+}
+
+@media screen and (max-width: 1024px) {
+  .section-hvac-insights {
+    background-size: 65% !important;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .section-hvac-insights {
+    padding: 60px 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section-hvac-insights {
+    height: 270px !important;
+    background-size: 65% !important;
+  }
+}
+@media screen and (max-width: 767px) {
+  .section-hvac-insights {
+    height: auto;
+    padding: 40px 0;
+  }
+  .section-hvac-insights {
+    height: auto;
+    text-align: center;
+    background: #2b64df;
+    display: block;
+    padding-top: 35px;
+    padding-bottom: 0;
+  }
+  .mobile-hvac-insights-section {
+    background-image: url("../../../assets/images/frontend/images/hvac-insights-bg.png");
+    height: 240px;
+    margin-top: 35px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .section-hvac-insights h2 {
+    font-size: 26px;
+  }
+  .section-hvac-insights p {
+    font-size: 16px;
+  }
+}
