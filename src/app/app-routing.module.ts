@@ -27,11 +27,11 @@ const routes: Routes = [
         component: OnlineRequestDemoComponent,
       },
       {
-        path: 'invoice',
+        path: 'invoices',
         component: InvoiceComponent,
       },
       {
-        path: 'estimate',
+        path: 'estimates',
         component: EstimateComponent,
       },
       {

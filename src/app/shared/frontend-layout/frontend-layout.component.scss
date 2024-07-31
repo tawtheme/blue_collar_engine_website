@@ -586,19 +586,29 @@ select option {
   text-decoration: none;
   color: #333;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
 
-.feature-box h5 {
-  margin-top: 0;
-  font-size: 16px;
-  margin-bottom: 5px;
-}
+  i{
+    font-size: 20px;
+    position: relative;
+    top: 5px;
+  }
+  h5 {
+    margin-top: 0;
+    font-size: 18px;
+    margin-bottom: 3px;
 
-.feature-box p {
-  margin-bottom: 0;
-  font-size: 14px;
-}
+  }
+  p {
+    margin-bottom: 0;
+    font-size: 13px; color: #6b7280;
+  }
 
-.feature-box:hover h5, .feature-box:hover p{
-  color: #064499;
+  &:hover{
+    h5{
+      color: #064499;
+    }
+    p{
+      color: #064499;
+    }
+  }
 }
