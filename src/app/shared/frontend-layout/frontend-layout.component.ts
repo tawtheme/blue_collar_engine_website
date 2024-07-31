@@ -1,5 +1,4 @@
-import { Component, Input, OnInit, HostListener } from '@angular/core';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from '@environments/environment';
 
@@ -10,30 +9,37 @@ import { environment } from '@environments/environment';
 })
 export class FrontendLayoutComponent {
   currentYear: number = new Date().getFullYear();
-  crmBaseUrl:any=environment.crmBaseUrl;
-  constructor(private _route: Router) {
-    let getLink = window.location.href;
-    //////////console.log('window.location.href :' + getLink)
+  crmBaseUrl: any = environment.crmBaseUrl;
 
+  constructor(private _route: Router) {
+    this.checkSubdomain();
+  }
+
+  private checkSubdomain(): void {
+    const getLink = window.location.href;
     const { hostname } = new URL(getLink);
-    var subdomain = hostname.split('.')[0];
-    //////////console.log(subdomain)
-    if (subdomain != environment.baseUrlHostName) {
+    const subdomain = hostname.split('.')[0];
+
+    if (subdomain !== environment.baseUrlHostName) {
       this._route.navigate(['/booking']);
     }
   }
 
   @HostListener('window:scroll', [])
-  onWindowScroll() {
+  onWindowScroll(): void {
     const mainHeader = document.querySelector('.main-header');
-    if (window.scrollY > 50) {
-      mainHeader?.classList.add('sticky-active');
+    if (mainHeader) {
+      if (window.scrollY > 50) {
+        mainHeader.classList.add('sticky-active');
+      } else {
+        mainHeader.classList.remove('sticky-active');
+      }
     } else {
-      mainHeader?.classList.remove('sticky-active');
+      console.log('Main header not found'); // Debugging log
     }
   }
 
-  redirectToLogin(){
-    window.location.href=this.crmBaseUrl;
+  redirectToLogin(): void {
+    window.location.href = this.crmBaseUrl;
   }
 }
