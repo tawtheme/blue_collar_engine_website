@@ -3,4 +3,5 @@ export const environment = {
     apiUrl: 'https://api.tawfresh.com',
     baseUrlHostName: 'tawfresh',
     tenantToken: 'kwVEV6',
+    crmBaseUrl: 'https://tawfresh.com/login'
 };
