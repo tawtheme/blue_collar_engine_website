@@ -27,19 +27,19 @@ const routes: Routes = [
         component: OnlineRequestDemoComponent,
       },
       {
-        path: 'page/invoice',
+        path: 'invoice',
         component: InvoiceComponent,
       },
       {
-        path: 'page/estimate',
+        path: 'estimate',
         component: EstimateComponent,
       },
       {
-        path: 'page/online-booking-system',
+        path: 'online-booking-system',
         component: OnlineBookingSystemComponent,
       },
       {
-        path: 'page/booking-system',
+        path: 'booking-system',
         component: BookingSystemComponent,
       },
       {
