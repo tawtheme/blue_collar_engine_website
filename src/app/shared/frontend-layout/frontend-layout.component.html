@@ -26,26 +26,25 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-3">
-                                        <a [routerLink]="['/page/invoice']" class="feature-box">
+                                        <a [routerLink]="['invoice']" class="feature-box">
                                             <h5>Invoice</h5>
-                                            <p>Easy Invoicing
-                                                for HVAC Contractors</p>
+                                            <p>Easy Invoicing for HVAC Contractors</p>
                                         </a>
                                     </div>
                                     <div class="col-md-3">
-                                        <a [routerLink]="['/page/estimate']" class="feature-box">
+                                        <a [routerLink]="['estimate']" class="feature-box">
                                             <h5>Estimate</h5>
                                             <p>Achieve accuracy and efficiency in your estimating process</p>
                                         </a>
                                     </div>
                                     <div class="col-md-3">
-                                        <a [routerLink]="['/page/online-booking-system']" class="feature-box">
+                                        <a [routerLink]="['online-booking-system']" class="feature-box">
                                             <h5>Online Booking From</h5>
                                             <p>Scheduling with Advanced Booking Form Features</p>
                                         </a>
                                     </div>
                                     <div class="col-md-3">
-                                        <a [routerLink]="['/page/booking-system']" class="feature-box">
+                                        <a [routerLink]="['booking-system']" class="feature-box">
                                             <h5>Booking Management</h5>
                                             <p>Organize, track, and manage all your Bookings effortlessly</p>
                                         </a>
@@ -86,17 +85,25 @@
 
 <footer class="footer-section">
     <div class="footer-top">
-        <div class="container">
+        <div class="container-xxl">
             <div class="row">
-                <div class="col-lg-4 col-md-12 footer-column mb-4 mb-lg-0">
+                <div class="col-lg-3 col-md-12 footer-column mb-4 mb-lg-0">
                     <h5 class="ft-title">Contact Us</h5>
                     <ul>
                         <li><a href="tel:3478493436"> <span class="icon-call"></span> (347) 849-3436</a></li>
-                        <li><a href="mailto:info@bluecollarengine.com"> <span
-                                    class="icon-email"></span>info@bluecollarengine.com</a></li>
+                        <li><a href="mailto:info@bluecollarengine.com"> <span class="icon-email"></span>info@bluecollarengine.com</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-4  col-md-4 mb-4 mb-md-0 footer-column">
+                <div class="col-lg-3 col-md-12 footer-column mb-4 mb-lg-0">
+                    <h5 class="ft-title">Features</h5>
+                    <ul>
+                        <li><a [routerLink]="['/online-booking-system']">Online Scheduling</a></li>
+                        <li><a [routerLink]="['/booking-system']">Booking System</a></li>
+                        <li><a [routerLink]="['/estimate']">Estimate</a></li>
+                        <li><a [routerLink]="['/invoice']">Invoice</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-12 footer-column mb-4 mb-lg-0">
                     <h5 class="ft-title">Resources</h5>
                     <ul>
                         <li><a href="#faqs">FAQs</a></li>
@@ -104,7 +111,7 @@
                         <li><a [routerLink]="['/privacy-policy']">Privacy Policy</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-4 col-md-4 mb-4 mb-md-0 footer-column">
+                <div class="col-lg-3 col-md-4 mb-4 mb-md-0 footer-column">
                     <h5 class="ft-title">Company</h5>
                     <ul>
                         <li><a [routerLink]="['/about-us']">About Us</a></li>
