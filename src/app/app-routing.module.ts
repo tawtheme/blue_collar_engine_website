@@ -58,8 +58,14 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomePageComponent,
-  }, 
+    component: FrontendLayoutComponent,
+    children: [
+      {
+        path: '',
+        component: HomePageComponent
+      }
+    ]
+  },
   { path: '**', component: PagenotfoundComponent },
 ];
 
@@ -67,4 +73,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

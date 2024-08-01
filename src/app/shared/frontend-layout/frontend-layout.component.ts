@@ -18,9 +18,9 @@ export class FrontendLayoutComponent {
     const { hostname } = new URL(getLink);
     var subdomain = hostname.split('.')[0];
     //////////console.log(subdomain)
-    if (subdomain != environment.baseUrlHostName) {
-      this._route.navigate(['/booking']);
-    }
+    // if (subdomain != environment.baseUrlHostName) {
+    //   this._route.navigate(['/booking']);
+    // }
   }
 
   @HostListener('window:scroll', [])
