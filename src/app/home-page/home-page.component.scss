@@ -28,11 +28,16 @@
 
 .hero-section {
   position: relative;
-  background: url(../../assets/images/frontend/images/hero-bg.png);
-  background-size: cover;
-  background-position: top center;
   height: 650px;
 }
+
+.hero-section .carousel-item{
+  position: relative;
+  background-size: cover;
+  height: 650px;
+  background-position: top center;
+}
+
 
 .hero-section .container {
   height: 100%;
@@ -217,7 +222,7 @@ form.hero_newsletter_form button {
     padding-bottom: 60px;
   }
 
-  .hero-section {
+  .hero-section , .hero-section .carousel-item{
     height: 520px;
   }
 }

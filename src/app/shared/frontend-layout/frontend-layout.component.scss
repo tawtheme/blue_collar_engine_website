@@ -609,6 +609,9 @@ select option {
     position: relative !important;
     box-shadow: none !important;
   }
+  .mega-menu-content-item {
+    border-bottom: 1px solid #ddd;
+}
 }
 
 .mega-menu-content.show,
@@ -642,6 +645,12 @@ select option {
     font-size: 20px;
     position: relative;
     top: 5px;
+    @media screen and (max-width:767px) {
+      font-size: 14px;
+      position: relative;
+      top: 2px;
+      left: 8px;
+    }
   }
 
   h5 {
@@ -652,13 +661,20 @@ select option {
     @media screen and (max-width:1199px) {
       font-size: 15px;
     }
+    @media screen and (max-width:767px) {
+      margin-bottom: 0;
+      font-weight: 400;
+      font-size: 15px;
+    }
   }
 
   p {
     margin-bottom: 0;
     font-size: 13px;
     color: #6b7280;
-
+    @media screen and (max-width:767px) {
+      display: none;
+    }
   }
 
   &:hover {
