@@ -27,19 +27,19 @@ const routes: Routes = [
         component: OnlineRequestDemoComponent,
       },
       {
-        path: 'page/invoice',
+        path: 'invoices',
         component: InvoiceComponent,
       },
       {
-        path: 'page/estimate',
+        path: 'estimates',
         component: EstimateComponent,
       },
       {
-        path: 'page/online-booking-system',
+        path: 'online-booking-system',
         component: OnlineBookingSystemComponent,
       },
       {
-        path: 'page/booking-system',
+        path: 'booking-system',
         component: BookingSystemComponent,
       },
       {
@@ -58,8 +58,14 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomePageComponent,
-  }, 
+    component: FrontendLayoutComponent,
+    children: [
+      {
+        path: '',
+        component: HomePageComponent
+      }
+    ]
+  },
   { path: '**', component: PagenotfoundComponent },
 ];
 
@@ -67,4 +73,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
