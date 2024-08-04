@@ -2,8 +2,7 @@
     <div class="top-header-bar">
         <div class="container-xxl">
             <p class="mb-0">Join our plan and enjoy priority service and discounts!
-                <a href="javascript:void(0);" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
-                    [routerLink]="['/online-request-demo']" target="_blank">Click here</a>
+                <a href="javascript:void(0);" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/online-request-demo']" target="_blank">Click here</a>
             </p>
         </div>
     </div>
@@ -20,41 +19,58 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mb-0">
                     <li class="nav-item dropdown mega-menu-nav-item">
-                        <a class="nav-link dropdown-toggle " data-bs-toggle="dropdown" aria-expanded="false"
-                            href="javascript:void(0)">Features</a>
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" href="javascript:void(0)">Features</a>
                         <div class="dropdown-menu mega-menu-content">
-                            <div class="container">
+                            <div class="container-xxl pt-0 pb-0 pt-lg-4 pb-lg-4">
                                 <div class="row">
-                                    <div class="col-md-3">
-                                        <a [routerLink]="['/page/invoice']" class="feature-box">
-                                            <h5>Invoice</h5>
-                                            <p>Easy Invoicing
-                                                for HVAC Contractors</p>
+                                    <div class="col-lg-3 mega-menu-content-item">
+                                        <a [routerLink]="['online-booking-system']" class="feature-box">
+                                            <div class="d-flex gap-3">
+                                                <i class="icon-document"></i>
+                                                <div>
+                                                    <h5>Online Booking From</h5>
+                                                    <p>Detailed descriptions and pricing for each service.</p>
+                                                </div>
+                                            </div>
                                         </a>
                                     </div>
-                                    <div class="col-md-3">
-                                        <a [routerLink]="['/page/estimate']" class="feature-box">
-                                            <h5>Estimate</h5>
-                                            <p>Achieve accuracy and efficiency in your estimating process</p>
+                                    <div class="col-lg-3 mega-menu-content-item">
+                                        <a [routerLink]="['booking-system']" class="feature-box">
+                                            <div class="d-flex gap-3">
+                                                <i class="icon-calendar"></i>
+                                                <div>
+                                                    <h5>Booking System</h5>
+                                                    <p>Efficient management of resources and staff schedules</p>
+                                                </div>
+                                            </div>
                                         </a>
                                     </div>
-                                    <div class="col-md-3">
-                                        <a [routerLink]="['/page/online-booking-system']" class="feature-box">
-                                            <h5>Online Booking From</h5>
-                                            <p>Scheduling with Advanced Booking Form Features</p>
+                                    <div class="col-lg-3 mega-menu-content-item">
+                                        <a [routerLink]="['estimates']" class="feature-box">
+                                            <div class="d-flex gap-3">
+                                                <i class="icon-estimate"></i>
+                                                <div>
+                                                    <h5>Estimates</h5>
+                                                    <p>Tracks the status of each estimate, such as sent, viewed, and approved.</p>
+                                                </div>
+                                            </div>
                                         </a>
                                     </div>
-                                    <div class="col-md-3">
-                                        <a [routerLink]="['/page/booking-system']" class="feature-box">
-                                            <h5>Booking Management</h5>
-                                            <p>Organize, track, and manage all your Bookings effortlessly</p>
+                                    <div class="col-lg-3 mega-menu-content-item">
+                                        <a [routerLink]="['invoices']" class="feature-box">
+                                            <div class="d-flex gap-3">
+                                                <i class="icon-invoice"></i>
+                                                <div>
+                                                    <h5>Invoices</h5>
+                                                    <p>Shows multiple services with details and prices on one invoice.</p>
+                                                </div>
+                                            </div>
                                         </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </li>
-
                     <li class="nav-item">
                         <a class="nav-link" href="#podcast">Podcast</a>
                     </li>
@@ -63,7 +79,8 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="javascript:void(0);" routerLinkActive="active"
-                            [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/about-us']">About Us</a>
+                            [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/about-us']">About Us
+                        </a>
                     </li>
                 </ul>
                 <div class="top-menu-right">
@@ -86,17 +103,25 @@
 
 <footer class="footer-section">
     <div class="footer-top">
-        <div class="container">
+        <div class="container-xxl">
             <div class="row">
-                <div class="col-lg-4 col-md-12 footer-column mb-4 mb-lg-0">
+                <div class="col-lg-3 col-md-12 footer-column mb-4 mb-lg-0">
                     <h5 class="ft-title">Contact Us</h5>
                     <ul>
                         <li><a href="tel:3478493436"> <span class="icon-call"></span> (347) 849-3436</a></li>
-                        <li><a href="mailto:info@bluecollarengine.com"> <span
-                                    class="icon-email"></span>info@bluecollarengine.com</a></li>
+                        <li><a href="mailto:info@bluecollarengine.com"> <span class="icon-email"></span>info@bluecollarengine.com</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-4  col-md-4 mb-4 mb-md-0 footer-column">
+                <div class="col-lg-3 col-md-12 footer-column mb-4 mb-lg-0">
+                    <h5 class="ft-title">Features</h5>
+                    <ul>
+                        <li><a [routerLink]="['/online-booking-system']">Online Scheduling</a></li>
+                        <li><a [routerLink]="['/booking-system']">Booking System</a></li>
+                        <li><a [routerLink]="['/estimates']">Estimate</a></li>
+                        <li><a [routerLink]="['/invoices']">Invoice</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-12 footer-column mb-4 mb-lg-0">
                     <h5 class="ft-title">Resources</h5>
                     <ul>
                         <li><a href="#faqs">FAQs</a></li>
@@ -104,7 +129,7 @@
                         <li><a [routerLink]="['/privacy-policy']">Privacy Policy</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-4 col-md-4 mb-4 mb-md-0 footer-column">
+                <div class="col-lg-3 col-md-4 mb-4 mb-md-0 footer-column">
                     <h5 class="ft-title">Company</h5>
                     <ul>
                         <li><a [routerLink]="['/about-us']">About Us</a></li>
@@ -116,8 +141,7 @@
     </div>
     <div class="footer-bottom text-center">
         <div class="container">
-            <p class="mb-0 text-white font300 font13">© Copyright {{currentYear}} Blue Collar Engine. All Rights
-                Reserved</p>
+            <p class="mb-0 text-white font300 font13">© Copyright {{currentYear}} Blue Collar Engine. All Rights Reserved</p>
         </div>
     </div>
 </footer>
