@@ -34,6 +34,8 @@ import { OnlineBookingSystemComponent } from './online-booking-system/online-boo
 import { BookingSystemComponent } from './booking-system/booking-system.component';
 import { InvoiceComponent } from './invoice/invoice.component';
 import { EstimateComponent } from './estimate/estimate.component';
+import { BlogComponent } from './blog/blog.component';
+import { BlogDetailsComponent } from './blog-details/blog-details.component';
 
 Date.prototype.toISOString = function () {
   return moment(this).format('YYYY-MM-DDTHH:mm:ss');
@@ -78,6 +80,8 @@ const matSnackbarDefaultConfig: MatSnackBarConfig = {
     BookingSystemComponent,
     InvoiceComponent,
     EstimateComponent,
+    BlogComponent,
+    BlogDetailsComponent,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
