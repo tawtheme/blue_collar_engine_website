@@ -88,7 +88,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="javascript:void(0);" routerLinkActive="active"
-                            [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/blog']">Resources
+                            [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/blog']">Blog
                         </a>
                     </li>
 
@@ -119,8 +119,7 @@
                     <h5 class="ft-title">Contact Us</h5>
                     <ul>
                         <li><a href="tel:3478493436"> <span class="icon-call"></span> (347) 849-3436</a></li>
-                        <li><a href="mailto:info@bluecollarengine.com"> <span
-                                    class="icon-email"></span>info@bluecollarengine.com</a></li>
+                        <li><a href="mailto:info@bluecollarengine.com"> <span class="icon-email"></span>info@bluecollarengine.com</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-12 footer-column mb-4 mb-lg-0">
@@ -135,6 +134,7 @@
                 <div class="col-lg-3 col-md-12 footer-column mb-4 mb-lg-0">
                     <h5 class="ft-title">Resources</h5>
                     <ul>
+                        <li><a [routerLink]="['/blog']">Blog</a></li>
                         <li><a href="#faqs">FAQs</a></li>
                         <li><a [routerLink]="['/terms-of-service']">Terms and Conditions</a></li>
                         <li><a [routerLink]="['/privacy-policy']">Privacy Policy</a></li>
@@ -152,8 +152,7 @@
     </div>
     <div class="footer-bottom text-center">
         <div class="container">
-            <p class="mb-0 text-white font300 font13">© Copyright {{currentYear}} Blue Collar Engine. All Rights
-                Reserved</p>
+            <p class="mb-0 text-white font300 font13">© Copyright {{currentYear}} Blue Collar Engine. All Rights Reserved</p>
         </div>
     </div>
 </footer>
