@@ -12,7 +12,7 @@ import { LatestBlog } from './latestblog.interface'; // Import the Blog interfac
 export class BlogComponent implements OnInit {
 
   blogs: Blog[] = [];
-  postsPerPage = 12;  // Number of posts per page
+  postsPerPage = 21;  // Number of posts per page
   currentPage = 1;    // Current page number
 
   post_count = 3;    // Post count for latest blogs
@@ -36,8 +36,8 @@ export class BlogComponent implements OnInit {
 
   }
 
-  viewDetail(blogId: number): void {
-    this.router.navigate(['/blog', blogId]); // Navigate to the detail page
+  viewDetail(slug: string): void {
+    this.router.navigate(['/blog', slug]); // Navigate to the detail page
   }
 
 }

@@ -28,9 +28,9 @@
                         <div class="row gx-lg-5">
                             <div class="col-md-9">
                                 <div>
-                                    <h3 class="mb-3">{{blog.title}}</h3>
+                                    <h3 class="mb-3" [innerHTML]="blog.title"></h3>
                                     <p class="font-muted" [innerHTML]="blog.content"></p>
-                                    <a (click)="viewDetail(blog.id)"
+                                    <a (click)="viewDetail(blog.permalink)"
                                         class="text-primary d-inline-flex align-items-center gap-2">Keep reading
                                         <span class="icon-down-arrow rotate90Left"></span></a>
                                 </div>
@@ -62,9 +62,9 @@
                         <img src="{{blog.thumbnail}}" class="img-fluid rounded-3" />
                     </div>
                     <div>
-                        <h4 class="mb-2">{{blog.title}}</h4>
+                        <h4 class="mb-2" [innerHTML]="blog.title"></h4>
                         <p class="font-muted" [innerHTML]="blog.content"></p>
-                        <a (click)="viewDetail(blog.id)"
+                        <a (click)="viewDetail(blog.permalink)"
                             class="text-primary d-inline-flex align-items-center gap-2 text-decoration-underline">Keep
                             reading
                         </a>

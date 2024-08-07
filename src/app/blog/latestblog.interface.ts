@@ -5,6 +5,7 @@ export interface LatestBlog {
   date: string;
   author: string;
   thumbnail: string;
+  permalink: string;
   // other properties...
 }
 

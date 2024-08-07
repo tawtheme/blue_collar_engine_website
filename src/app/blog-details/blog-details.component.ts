@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { BlogService } from './blog-details.service';
 import { Blog, BlogResponse } from './blog-details.interface';
@@ -14,10 +13,11 @@ import { RelatedBlog, RelatedBlogResponse } from './relatedblog.interface';
 export class BlogDetailsComponent implements OnInit {
   blog: Blog | undefined;
   sanitizedContent: SafeHtml | undefined;
+  sanitizedTitle: SafeHtml | undefined;
   isLoading = true; // To track loading state
   error: string | null = null; // To track errors
-  relatedblogs : RelatedBlog[] = [];
-  post_count = 3;    // Post count for latest blogs
+  relatedblogs: RelatedBlog[] = [];
+  post_count = 3; // Post count for latest blogs
 
   constructor(
     private route: ActivatedRoute,
@@ -28,24 +28,27 @@ export class BlogDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
-      const id = +params.get('id')!;
-      if (id) {
-        this.getBlogDetail(id);
-        this.getRelatedBlogs(id, this.post_count);
+      const slug = params.get('slug');
+      if (slug) {
+        this.getBlogDetail(slug);
+        this.getRelatedBlogs(slug, this.post_count);
       } else {
-        this.error = 'Invalid blog ID';
+        this.error = 'Invalid blog slug';
         this.isLoading = false;
       }
     });
-
   }
 
-  getBlogDetail(id: number): void {
-    this.blogService.blogDetail(id).subscribe(
+  getBlogDetail(slug: string): void {
+    this.blogService.blogDetail(slug).subscribe(
       (response: BlogResponse) => {
-         //debugger
-        this.blog = response.data; 
-        this.sanitizedContent = this.sanitizer.bypassSecurityTrustHtml(this.blog.content);
+        this.blog = response.data;
+        if (this.blog) {
+          this.sanitizedContent = this.sanitizer.bypassSecurityTrustHtml(this.blog.content);
+          this.sanitizedTitle = this.sanitizer.bypassSecurityTrustHtml(this.blog.title);
+        } else {
+          this.error = 'Blog not found';
+        }
         this.isLoading = false;
       },
       (error) => {
@@ -56,22 +59,20 @@ export class BlogDetailsComponent implements OnInit {
     );
   }
 
-
-  getRelatedBlogs(id: number, post_count: number): void {
-    this.blogService.getRelatedBlogs(id, post_count).subscribe(
+  getRelatedBlogs(slug: string, post_count: number): void {
+    this.blogService.getRelatedBlogs(slug, post_count).subscribe(
       (response: RelatedBlogResponse) => {
-        this.relatedblogs = response.data; 
+        this.relatedblogs = response.data;
       },
       (error) => {
-        this.error = 'An error occurred while fetching the related blog.';
-        console.error('Error fetching related blog:', error);
+        this.error = 'An error occurred while fetching the related blogs.';
+        console.error('Error fetching related blogs:', error);
         this.isLoading = false;
       }
     );
   }
 
-   viewDetail(blogId: number): void {
-    this.router.navigate(['/blog', blogId]); // Navigate to the detail page
+  viewDetail(slug: string): void {
+    this.router.navigate(['/blog', slug]); // Navigate to the detail page
   }
-
 }

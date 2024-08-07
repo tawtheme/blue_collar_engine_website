@@ -14,13 +14,13 @@ export class BlogService {
 
 constructor(private http: HttpClient) {}
 
-  blogDetail(id: number): Observable<BlogResponse> {
-    const body = { id };
+  blogDetail(slug: string): Observable<BlogResponse> {
+    const body = { slug };
     return this.http.post<BlogResponse>(`${this.baseUrl}/blog-detail`, body);
   }
 
-  getRelatedBlogs(post_id: number, post_count: number): Observable<RelatedBlogResponse> {
-    const body = { post_id, post_count };
+  getRelatedBlogs(slug: string, post_count: number): Observable<RelatedBlogResponse> {
+    const body = { slug, post_count };
     return this.http.post<RelatedBlogResponse>(`${this.baseUrl}/related-blog-list`, body);
   }
 

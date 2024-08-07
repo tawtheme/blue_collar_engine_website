@@ -14,8 +14,8 @@ export class BlogService {
 
 constructor(private http: HttpClient) {}
 
-  getBlogs(posts_per_page: number, page: number): Observable<BlogResponse> {
-    const body = { posts_per_page, page };
+  getBlogs(per_page: number, page: number): Observable<BlogResponse> {
+    const body = { per_page, page };
     return this.http.post<BlogResponse>(`${this.baseUrl}/blog-list`, body);
   }
 

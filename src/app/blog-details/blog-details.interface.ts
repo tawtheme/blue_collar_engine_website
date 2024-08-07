@@ -6,6 +6,7 @@ export interface Blog {
   author: string;
   thumbnail: string;
   full_image : string;
+  permalink: string;
   // other properties...
 }
 
