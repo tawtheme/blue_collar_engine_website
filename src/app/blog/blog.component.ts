@@ -12,7 +12,7 @@ import { LatestBlog } from './latestblog.interface'; // Import the Blog interfac
 export class BlogComponent implements OnInit {
 
   blogs: Blog[] = [];
-  postsPerPage = 21;  // Number of posts per page
+  postsPerPage = 100;  // Number of posts per page
   currentPage = 1;    // Current page number
 
   post_count = 3;    // Post count for latest blogs
