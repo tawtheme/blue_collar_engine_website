@@ -11,4 +11,5 @@ export interface Blog {
 
 export interface BlogResponse {
   data: Blog[];
+  total: number; // Total number of blogs
 }

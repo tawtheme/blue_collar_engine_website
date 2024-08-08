@@ -17,6 +17,9 @@ import { LoaderService } from './_services/loader.service';
 import { LoaderInterceptor } from './_helpers/loader.interceptor';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MaterialModule } from '../material/material.module';
+import { NgxPaginationModule } from 'ngx-pagination'; 
+
+
 import * as moment from 'moment';
 import { ConfirmDialogComponent } from './shared/confirm-dialog/confirm-dialog/confirm-dialog.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -63,6 +66,8 @@ const matSnackbarDefaultConfig: MatSnackBarConfig = {
     MaterialModule,
     JwtModule,
     SharedModule,
+    NgxPaginationModule, 
+
 
     NgxStripeModule.forRoot(),
   ],
