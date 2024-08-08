@@ -17,6 +17,9 @@ import { LoaderService } from './_services/loader.service';
 import { LoaderInterceptor } from './_helpers/loader.interceptor';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MaterialModule } from '../material/material.module';
+import { NgxPaginationModule } from 'ngx-pagination'; 
+
+
 import * as moment from 'moment';
 import { ConfirmDialogComponent } from './shared/confirm-dialog/confirm-dialog/confirm-dialog.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -34,6 +37,8 @@ import { OnlineBookingSystemComponent } from './online-booking-system/online-boo
 import { BookingSystemComponent } from './booking-system/booking-system.component';
 import { InvoiceComponent } from './invoice/invoice.component';
 import { EstimateComponent } from './estimate/estimate.component';
+import { BlogComponent } from './blog/blog.component';
+import { BlogDetailsComponent } from './blog-details/blog-details.component';
 
 Date.prototype.toISOString = function () {
   return moment(this).format('YYYY-MM-DDTHH:mm:ss');
@@ -61,6 +66,8 @@ const matSnackbarDefaultConfig: MatSnackBarConfig = {
     MaterialModule,
     JwtModule,
     SharedModule,
+    NgxPaginationModule, 
+
 
     NgxStripeModule.forRoot(),
   ],
@@ -78,6 +85,8 @@ const matSnackbarDefaultConfig: MatSnackBarConfig = {
     BookingSystemComponent,
     InvoiceComponent,
     EstimateComponent,
+    BlogComponent,
+    BlogDetailsComponent,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },

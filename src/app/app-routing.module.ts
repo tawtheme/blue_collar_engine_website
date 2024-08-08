@@ -11,6 +11,8 @@ import { InvoiceComponent } from './invoice/invoice.component';
 import { OnlineBookingSystemComponent } from './online-booking-system/online-booking-system.component';
 import { BookingSystemComponent } from './booking-system/booking-system.component';
 import { EstimateComponent } from './estimate/estimate.component';
+import { BlogComponent } from './blog/blog.component';
+import { BlogDetailsComponent } from './blog-details/blog-details.component';
 
 const routes: Routes = [
   {
@@ -54,6 +56,14 @@ const routes: Routes = [
         path: 'about-us',
         component: AboutUsComponent,
       },
+      {
+        path: 'blog',
+        component: BlogComponent,
+      },
+      {
+        path: 'blog/:slug',
+        component: BlogDetailsComponent,
+      },
     ],
   },
   {
@@ -62,9 +72,9 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: HomePageComponent
-      }
-    ]
+        component: HomePageComponent,
+      },
+    ],
   },
   { path: '**', component: PagenotfoundComponent },
 ];
@@ -73,4 +83,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
