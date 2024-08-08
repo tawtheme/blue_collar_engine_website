@@ -27,7 +27,7 @@
                                 <div>
                                     <h3 class="mb-2" [innerHTML]="blog.title"></h3>
                                     <p class="font-muted" [innerHTML]="blog.content"></p>
-                                    <a (click)="viewDetail(blog.permalink)" class="text-primary d-inline-flex align-items-center gap-2">Keep reading<span class="icon-down-arrow rotate90Left mt-1"></span></a>
+                                    <a (click)="viewDetail(blog.permalink)" class="text-primary d-inline-flex align-items-center gap-2">Keep reading <span class="icon-down-arrow rotate90Left mt-1"></span></a>
                                 </div>
                             </div>
                             <div class="col-md-3 mt-md-0 mt-3">
@@ -50,26 +50,15 @@
             <h2>Feature Articles</h2>
         </div>
         <div class="row">
-<<<<<<< HEAD
-            <div class="col-lg-4 col-md-6" *ngFor="let blog of blogs | paginate: { itemsPerPage: postsPerPage, currentPage: currentPage, totalItems: totalBlogs }">
-=======
             <div class="col-lg-4 col-md-6 mb-4" *ngFor="let blog of blogs">
->>>>>>> ccc8a6e9e26e22c6918fb2205315133c218e75fc
                 <div class="feature-articles-item">
                     <div class="feature-item-image mb-3" *ngIf="blog.thumbnail && blog.thumbnail.trim() !== ''">
                         <img [src]="blog.thumbnail" class="img-fluid rounded-3" alt="{{blog.title}}" />
                     </div>
                     <div>
-                        <h3 class="mb-2 font16" [innerHTML]="blog.title"></h3>
+                        <h3 class="mb-2 font18" [innerHTML]="blog.title"></h3>
                         <p class="font-muted" [innerHTML]="blog.content"></p>
-<<<<<<< HEAD
-                        <a (click)="viewDetail(blog.permalink)"
-                            class="text-primary d-inline-flex align-items-center gap-2 text-decoration-underline">
-                            Keep reading
-                        </a>
-=======
-                        <a (click)="viewDetail(blog.permalink)" class="text-primary d-inline-flex align-items-center gap-2">Keep reading<span class="icon-down-arrow rotate90Left mt-1"></span></a>
->>>>>>> ccc8a6e9e26e22c6918fb2205315133c218e75fc
+                        <a (click)="viewDetail(blog.permalink)" class="text-primary d-inline-flex align-items-center gap-2">Keep reading <span class="icon-down-arrow rotate90Left mt-1"></span></a>
                     </div>
                 </div>
             </div>

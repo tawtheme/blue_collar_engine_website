@@ -30,7 +30,6 @@ body {
 }
 
 // Utilities
-
 h1,
 h2,
 h3,
@@ -1767,4 +1766,85 @@ app-header {
       color: var(--primary) !important;
     }
   }
+}
+
+/*.. blog-detail ..*/
+.blog-details-section {
+  .metaPost{
+    background: #f0f5ff;
+    padding: 5px 10px;
+    border-radius: 100px;
+  }
+  h1 {
+    font-size: 35px !important;
+    @media screen and (max-width: 991px) {
+      font-size: 28px;
+    }
+    @media screen and (max-width: 575px) {
+      font-size: 22px;
+    }
+  }
+  h2 {
+    font-size: 24px;
+    line-height: 1.5;
+    margin-bottom: 5px;
+    margin-top: 20px;
+    strong{
+      font-weight: 700;
+    }
+  }
+  h3 {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 5px;
+    margin-top: 20px;
+    strong{
+      font-weight: 600;
+    }
+  }
+  h4 {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 5px;
+    strong{
+      font-weight: 600;
+    }
+  }
+  h5 {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 5px;
+    margin-top: 20px;
+    strong{
+      font-weight: 600;
+    }
+  }
+  h6 {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 5px;
+    margin-top: 20px;
+    strong{
+      font-weight: 600;
+    }
+  }
+  p {
+    font-size: 15px; margin: 0px 0px 12px 0px;
+    strong{
+      font-weight: 500;
+    }
+  }
+  ul{
+    margin: 0px 0px 15px 15px;
+  }
+  img {
+    border-radius: 12px;
+    margin-bottom: 20px;
+  }
+}
+.rotate90Right {
+  transform: rotate(90deg);
+}
+.rotate90Left {
+  transform: rotate(-90deg);
 }

@@ -6,15 +6,17 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a [routerLink]="['/']">Home</a></li>
                         <li class="breadcrumb-item"><a [routerLink]="['/blog']">Blog</a></li>
-                        <li class="breadcrumb-item active" aria-current="page"  [innerHTML]="sanitizedTitle"></li>
+                        <li class="breadcrumb-item active" aria-current="page" [innerHTML]="sanitizedTitle"></li>
                     </ol>
                 </nav>
             </div>
             <div class="col-lg-12 mx-auto" *ngIf="!isLoading && !error && blog">
-                <h2 class="mb-2" [innerHTML]="sanitizedTitle"></h2>
-                <p class="mb-0">By {{blog.author}}, Staff Writer</p>
-                <p class="mb-5">Last Updated : {{blog.date}}</p>
-                <div [innerHTML]="sanitizedContent"></div>
+                <h1 class="mb-2" [innerHTML]="sanitizedTitle"></h1>
+                <div class="d-inline-flex gap-2 metaPost">
+                    <span class="font13 font-muted">By {{blog.author}}, Staff Writer</span>
+                    <span class="font13 font-muted">Last Updated : {{blog.date}}</span>
+                </div>
+                <div class="postContent" [innerHTML]="sanitizedContent"></div>
                 <!-- Directly checking if the thumbnail URL is not empty -->
                 <div *ngIf="blog.full_image && blog.full_image.trim() !== ''">
                     <img [src]="blog.full_image" alt="Blog Thumbnail" class="img-fluid" alt="">
@@ -25,28 +27,22 @@
 </section>
 <section class="feature-articles">
     <div class="container">
-        <div class="section-title2-sec mb-4">
-            <h3>Related Articles</h3>
+        <div class="mb-4">
+            <h2 class="font800">Related Articles</h2>
         </div>
         <div class="row">
-
             <div class="col-lg-4 col-md-6" *ngFor="let blog of relatedblogs">
                 <div class="feature-articles-item">
                     <div class="feature-item-image mb-3" *ngIf="blog.thumbnail && blog.thumbnail.trim() !== ''">
                         <img src="{{blog.thumbnail}}" class="img-fluid rounded-3" />
                     </div>
-
                     <div>
                         <h4 class="mb-2" [innerHTML]="blog.title"></h4>
                         <p class="font-muted" [innerHTML]="blog.content"></p>
-                        <a (click)="viewDetail(blog.permalink)"
-                            class="text-primary d-inline-flex align-items-center gap-2 text-decoration-underline">Keep
-                            reading
-                        </a>
+                        <a (click)="viewDetail(blog.permalink)" class="text-primary d-inline-flex align-items-center gap-2">Keep reading <span class="icon-down-arrow rotate90Left mt-1"></span></a>
                     </div>
                 </div>
             </div>
-            
         </div>
     </div>
 </section>
