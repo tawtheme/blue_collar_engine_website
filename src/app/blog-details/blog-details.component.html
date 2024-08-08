@@ -16,11 +16,11 @@
                     <span class="font13 font-muted">By {{blog.author}}, Staff Writer</span>
                     <span class="font13 font-muted">Last Updated : {{blog.date}}</span>
                 </div>
-                <div class="postContent" [innerHTML]="sanitizedContent"></div>
-                <!-- Directly checking if the thumbnail URL is not empty -->
                 <div *ngIf="blog.full_image && blog.full_image.trim() !== ''">
                     <img [src]="blog.full_image" alt="Blog Thumbnail" class="img-fluid" alt="">
                 </div>
+                <div class="postContent" [innerHTML]="sanitizedContent"></div>
+                <!-- Directly checking if the thumbnail URL is not empty -->
             </div>
         </div>
     </div>
