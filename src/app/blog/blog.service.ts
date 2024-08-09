@@ -3,16 +3,18 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Blog, BlogResponse } from './blog.interface';
 import { LatestBlog, LatestBlogResponse } from './latestblog.interface';
+import { environment } from '@environments/environment';
 
 
 @Injectable({
- providedIn: 'root',
+  providedIn: 'root',
 })
 
 export class BlogService {
- private baseUrl = 'http://3.12.192.14/blog/wp-json/api/v1';
 
-constructor(private http: HttpClient) {}
+  baseUrl: any = environment.blogBaseUrl;
+  constructor(private http: HttpClient) { }
+
 
   getBlogs(per_page: number, page: number): Observable<BlogResponse> {
     const body = { per_page, page };
@@ -24,7 +26,7 @@ constructor(private http: HttpClient) {}
     return this.http.post<LatestBlogResponse>(`${this.baseUrl}/latest-blog-list`, body);
   }
 
-  
+
 
 
 }

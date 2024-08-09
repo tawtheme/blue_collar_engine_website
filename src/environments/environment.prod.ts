@@ -3,5 +3,6 @@ export const environment = {
     apiUrl: 'https://api.bluecollarengine.com',
     baseUrlHostName: 'bluecollarengine',
     tenantToken: 'kwVEV6',
-    crmBaseUrl:'https://bluecollarengine.app/login'
+    crmBaseUrl:'https://bluecollarengine.app/login',
+    blogBaseUrl:'https://bluecollarengine.com/blog/wp-json/api/v1'
   };
