@@ -1,8 +1,8 @@
 export const environment = {
     production: false,
-    apiUrl: 'https://api.tawfresh.com',
-    baseUrlHostName: 'tawfresh',
+    apiUrl: 'https://api.bluecollarengine.dev',
+    baseUrlHostName: 'bluecollarengine',
     tenantToken: 'kwVEV6',
-    crmBaseUrl: 'https://tawfresh.com/login',
+    crmBaseUrl: 'https://bluecollarengine.dev/login',
     blogBaseUrl:'http://3.12.192.14/blog/wp-json/api/v1'
 };

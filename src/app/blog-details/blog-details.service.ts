@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { BlogResponse } from './blog-details.interface';
 import { RelatedBlog, RelatedBlogResponse } from './relatedblog.interface';
+import { environment } from '@environments/environment';
 
 
 @Injectable({
@@ -10,8 +11,7 @@ import { RelatedBlog, RelatedBlogResponse } from './relatedblog.interface';
 })
 
 export class BlogService {
-  private baseUrl = 'http://3.12.192.14/blog/wp-json/api/v1';
-
+  baseUrl: any = environment.blogBaseUrl;
 constructor(private http: HttpClient) {}
 
   blogDetail(slug: string): Observable<BlogResponse> {
