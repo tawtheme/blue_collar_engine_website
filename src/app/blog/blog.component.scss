@@ -94,6 +94,16 @@
       margin-bottom: 0;
       border-bottom: 0;
     }
+    a{
+      cursor: pointer;
+    }
+  }
+}
+
+.blog-row{
+  display: grid; grid-template-columns: 2fr 1fr; align-items: center; gap: 30px;
+  @media screen and (max-width: 991px) {
+    display: flex; flex-direction: column-reverse;
   }
 }
 
@@ -117,6 +127,9 @@
         height: 232px;
         object-fit: cover;
       }
+    }
+    a{
+      cursor: pointer;
     }
   }
 }
