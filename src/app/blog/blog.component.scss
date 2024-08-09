@@ -75,7 +75,7 @@
   .blog-list-item {
     margin-bottom: 50px;
     padding-bottom: 50px;
-    border-bottom: 1px solid #d1d5db;
+    border-bottom: 1px solid var(--border-color2);
     padding-left: 30px;
     padding-right: 30px;
     @media screen and (max-width: 575px) {
@@ -120,7 +120,7 @@
     padding-bottom: 20px;
   }
   .feature-articles-item {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     .feature-item-image {
       img {
         width: 100%;

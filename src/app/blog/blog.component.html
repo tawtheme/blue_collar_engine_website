@@ -8,11 +8,9 @@
                         <li class="breadcrumb-item active" aria-current="page">Resources</li>
                     </ol>
                 </nav>
-
             </div>
             <div class="col-lg-9 mx-auto">
-                <h1 class="text-center">Latest News and Trends in
-                    HVAC Systems</h1>
+                <h1 class="text-center">Latest News and Trends in HVAC Systems</h1>
             </div>
         </div>
     </div>
@@ -23,27 +21,18 @@
         <div class="section-blog-list">
             <div class="row">
                 <div class="col-md-12">
-
                     <div class="blog-list-item" *ngFor="let blog of latestblogs">
-                        <div class="row gx-lg-5">
-                            <div class="col-md-9">
-                                <div>
-                                    <h3 class="mb-3" [innerHTML]="blog.title"></h3>
-                                    <p class="font-muted" [innerHTML]="blog.content"></p>
-                                    <a (click)="viewDetail(blog.permalink)"
-                                        class="text-primary d-inline-flex align-items-center gap-2">Keep reading
-                                        <span class="icon-down-arrow rotate90Left"></span></a>
-                                </div>
+                        <div class="blog-row">
+                            <div>
+                                <h3 class="mb-3" [innerHTML]="blog.title"></h3>
+                                <p class="font-muted" [innerHTML]="blog.content"></p>
+                                <a (click)="viewDetail(blog.permalink)" class="text-primary d-inline-flex align-items-center gap-2">Keep reading <span class="icon-down-arrow rotate90Left mt-1"></span></a>
                             </div>
-                            <div class="col-md-3 mt-md-0 mt-3">
-                                <div class="news-item-image" *ngIf="blog.thumbnail && blog.thumbnail.trim() !== ''">
-                                    <img src="{{blog.thumbnail}}"
-                                        class="img-fluid rounded-3" />
-                                </div>
+                            <div class="news-item-image" *ngIf="blog.thumbnail && blog.thumbnail.trim() !== ''">
+                                <img src="{{blog.thumbnail}}" class="img-fluid rounded-3" />
                             </div>
                         </div>
                     </div>
-                   
                 </div>
             </div>
         </div>
@@ -64,16 +53,13 @@
                     <div>
                         <h4 class="mb-2" [innerHTML]="blog.title"></h4>
                         <p class="font-muted" [innerHTML]="blog.content"></p>
-                        <a (click)="viewDetail(blog.permalink)"
-                            class="text-primary d-inline-flex align-items-center gap-2 text-decoration-underline">
-                            Keep reading
-                        </a>
+                        <a (click)="viewDetail(blog.permalink)" class="text-primary d-inline-flex align-items-center gap-2"> Keep reading <span class="icon-down-arrow rotate90Left mt-1"></span></a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="text-center">
+    <div class="text-center mt-5">
         <pagination-controls (pageChange)="onPageChange($event)"></pagination-controls>
     </div>
 </section>
