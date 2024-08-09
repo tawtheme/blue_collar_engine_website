@@ -10,7 +10,7 @@ import { RelatedBlog, RelatedBlogResponse } from './relatedblog.interface';
 })
 
 export class BlogService {
- private baseUrl = 'http://bluecollarengine.com/blog/wp-json/api/v1';
+  private baseUrl = 'http://3.12.192.14/blog/wp-json/api/v1';
 
 constructor(private http: HttpClient) {}
 
