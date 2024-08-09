@@ -5,12 +5,14 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb justify-content-center">
                         <li class="breadcrumb-item"><a [routerLink]="['/']">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Blog</li>
+                        <li class="breadcrumb-item active" aria-current="page">Resources</li>
                     </ol>
                 </nav>
+
             </div>
             <div class="col-lg-9 mx-auto">
-                <h1 class="text-center">Latest News and Trends in HVAC Systems</h1>
+                <h1 class="text-center">Latest News and Trends in
+                    HVAC Systems</h1>
             </div>
         </div>
     </div>
@@ -21,15 +23,23 @@
         <div class="section-blog-list">
             <div class="row">
                 <div class="col-md-12">
+
                     <div class="blog-list-item" *ngFor="let blog of latestblogs">
-                        <div class="blog-row">
-                            <div>
-                                <h3 class="mb-2" [innerHTML]="blog.title"></h3>
-                                <p class="font-muted" [innerHTML]="blog.content"></p>
-                                <a (click)="viewDetail(blog.permalink)" class="text-primary d-inline-flex align-items-center gap-2">Keep reading <span class="icon-down-arrow rotate90Left mt-1"></span></a>
+                        <div class="row gx-lg-5">
+                            <div class="col-md-9">
+                                <div>
+                                    <h3 class="mb-3" [innerHTML]="blog.title"></h3>
+                                    <p class="font-muted" [innerHTML]="blog.content"></p>
+                                    <a (click)="viewDetail(blog.permalink)"
+                                        class="text-primary d-inline-flex align-items-center gap-2">Keep reading
+                                        <span class="icon-down-arrow rotate90Left"></span></a>
+                                </div>
                             </div>
-                            <div class="news-item-image" *ngIf="blog.thumbnail && blog.thumbnail.trim() !== ''">
-                                <img src="{{blog.thumbnail}}" class="img-fluid rounded-3" />
+                            <div class="col-md-3 mt-md-0 mt-3">
+                                <div class="news-item-image" *ngIf="blog.thumbnail && blog.thumbnail.trim() !== ''">
+                                    <img src="{{blog.thumbnail}}"
+                                        class="img-fluid rounded-3" />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -43,18 +53,21 @@
 <section class="feature-articles">
     <div class="container">
         <div class="section-title2-sec mb-4">
-            <h2>Feature Articles</h2>
+            <h3>Feature Articles</h3>
         </div>
         <div class="row">
-            <div class="col-lg-4 col-md-6 mb-4" *ngFor="let blog of blogs">
+            <div class="col-lg-4 col-md-6" *ngFor="let blog of blogs | paginate: { itemsPerPage: postsPerPage, currentPage: currentPage, totalItems: totalBlogs }">
                 <div class="feature-articles-item">
                     <div class="feature-item-image mb-3" *ngIf="blog.thumbnail && blog.thumbnail.trim() !== ''">
                         <img [src]="blog.thumbnail" class="img-fluid rounded-3" alt="{{blog.title}}" />
                     </div>
                     <div>
-                        <h3 class="mb-2 font18" [innerHTML]="blog.title"></h3>
+                        <h4 class="mb-2" [innerHTML]="blog.title"></h4>
                         <p class="font-muted" [innerHTML]="blog.content"></p>
-                        <a (click)="viewDetail(blog.permalink)" class="text-primary d-inline-flex align-items-center gap-2">Keep reading <span class="icon-down-arrow rotate90Left mt-1"></span></a>
+                        <a (click)="viewDetail(blog.permalink)"
+                            class="text-primary d-inline-flex align-items-center gap-2 text-decoration-underline">
+                            Keep reading
+                        </a>
                     </div>
                 </div>
             </div>

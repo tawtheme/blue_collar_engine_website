@@ -4,6 +4,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { BlogService } from './blog-details.service';
 import { Blog, BlogResponse } from './blog-details.interface';
 import { RelatedBlog, RelatedBlogResponse } from './relatedblog.interface';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-blog-details',
@@ -23,6 +24,7 @@ export class BlogDetailsComponent implements OnInit {
     private route: ActivatedRoute,
     private blogService: BlogService,
     private sanitizer: DomSanitizer,
+    private titleService: Title,
     private router: Router
   ) {}
 
@@ -46,6 +48,7 @@ export class BlogDetailsComponent implements OnInit {
         if (this.blog) {
           this.sanitizedContent = this.sanitizer.bypassSecurityTrustHtml(this.blog.content);
           this.sanitizedTitle = this.sanitizer.bypassSecurityTrustHtml(this.blog.title);
+          this.titleService.setTitle(this.blog.title);
         } else {
           this.error = 'Blog not found';
         }

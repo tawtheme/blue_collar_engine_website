@@ -11,8 +11,10 @@ import { environment } from '@environments/environment';
 })
 
 export class BlogService {
+
   baseUrl: any = environment.blogBaseUrl;
   constructor(private http: HttpClient) { }
+
 
   getBlogs(per_page: number, page: number): Observable<BlogResponse> {
     const body = { per_page, page };
