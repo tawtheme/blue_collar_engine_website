@@ -4,5 +4,5 @@ export const environment = {
     baseUrlHostName: 'tawfresh',
     tenantToken: 'kwVEV6',
     crmBaseUrl: 'https://tawfresh.com/login',
-    blogBaseUrl:'https://bluecollarengine.com/blog/wp-json/api/v1'
+    blogBaseUrl:'http://3.12.192.14/blog/wp-json/api/v1'
 };
