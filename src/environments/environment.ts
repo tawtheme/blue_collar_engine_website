@@ -7,7 +7,8 @@ export const environment = {
   apiUrl: 'https://localhost:5100',
   baseUrlHostName: 'localhost',
   tenantToken: 'kwVEV6',
-  crmBaseUrl:'https://tawfresh.com/login'
+  crmBaseUrl:'https://tawfresh.com/login',
+  blogBaseUrl:'https://bluecollarengine.com/blog/wp-json/api/v1'
 };
 
 /*
