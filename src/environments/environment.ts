@@ -8,7 +8,7 @@ export const environment = {
   baseUrlHostName: 'localhost',
   tenantToken: 'kwVEV6',
   crmBaseUrl:'https://bluecollarengine.dev/login',
-  blogBaseUrl:'http://3.12.192.14/blog/wp-json/api/v1'
+  blogBaseUrl:'https://blog.bluecollarengine.com/wp-json/api/v1'
 };
 
 /*
